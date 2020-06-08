@@ -42,7 +42,11 @@ class CountryCell: UITableViewCell {
 
     let separatorLineView: UIView = {
         let view = UIView()
-        view.backgroundColor = .separator
+        if #available(iOS 13, *) {
+            view.backgroundColor = .separator
+        } else {
+            view.backgroundColor = .gray
+        }
         view.translatesAutoresizingMaskIntoConstraints = false
         view.heightAnchor.constraint(equalToConstant: 1).isActive = true
         return view
