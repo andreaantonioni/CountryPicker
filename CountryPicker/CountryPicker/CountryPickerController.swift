@@ -91,7 +91,6 @@ open class CountryPickerController: UIViewController {
     // MARK: - View life cycle
     fileprivate func setUpsSearchController() {
         searchController.hidesNavigationBarDuringPresentation = true
-        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.barStyle = .default
         searchController.searchBar.sizeToFit()
         searchController.searchBar.delegate = self
@@ -114,11 +113,11 @@ open class CountryPickerController: UIViewController {
         }
         
         // Setup view bar buttons
-        let uiBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop,
-                                              target: self,
-                                              action: #selector(self.crossButtonClicked(_:)))
-        
-        navigationItem.leftBarButtonItem = uiBarButtonItem
+        let dismissButton = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+                                            style: .plain,
+                                            target: self,
+                                            action: #selector(crossButtonClicked(_:)))
+        navigationItem.rightBarButtonItem = dismissButton
         
         // Setup table view and cells
         setUpTableView()
