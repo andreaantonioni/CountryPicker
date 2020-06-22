@@ -113,7 +113,7 @@ open class CountryPickerController: UIViewController {
         }
         
         // Setup view bar buttons
-        let dismissButton = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+        let dismissButton = UIBarButtonItem(image: UIImage(systemName: "xmark.circle"),
                                             style: .plain,
                                             target: self,
                                             action: #selector(crossButtonClicked(_:)))
